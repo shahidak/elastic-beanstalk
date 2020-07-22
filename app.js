@@ -12,7 +12,7 @@ app.get('/', async (req, res) => {
     await connectToDatabase()
     const notes = await Note.find()
     // console.log(notes);
-    res.send({ v: 2, notes })
+    res.send({ v: 3, notes })
 })
 
 http.createServer(app).listen(process.env.PORT || 8000)
