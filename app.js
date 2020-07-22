@@ -7,9 +7,12 @@ const connectToDatabase = require('./db')
 const Note = require('./Note')
 
 app.get('/', async (req, res) => {
+    // console.log(req.params);
+
     await connectToDatabase()
     const notes = await Note.find()
-    res.send({ v: 1, notes })
+    // console.log(notes);
+    res.send({ v: 2, notes })
 })
 
 http.createServer(app).listen(process.env.PORT || 8000)
